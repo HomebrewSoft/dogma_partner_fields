@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_activities_form" model="ir.ui.view">
+        <field name="name">view.partner.activities.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name="zip" position="after">
+                <field name="neighboor" placeholder="Neighboor"/>
+                <field name="reference" placeholder="Reference"/>
+            </field>
+            <field name="phone" position="after">
+                <field name="phone2" placeholder="Phone 2"/>
+            </field>
+            <field name="email" position="after">
+                <field name="email2" placeholder="Email 2"/>
+            </field>
+        </field>
+    </record>
+</odoo>

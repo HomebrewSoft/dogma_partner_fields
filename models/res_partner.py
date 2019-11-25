@@ -14,3 +14,7 @@ class Partner(models.Model):
     )
     email2 = fields.Char(
     )
+    category_parent_ids = fields.Many2many(
+        related='parent_id.category_id',
+        string=_('Etiquetas de la Cia.'),
+    )

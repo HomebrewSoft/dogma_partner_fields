@@ -10,10 +10,17 @@
                 <field name="reference" placeholder="Reference"/>
             </field>
             <field name="phone" position="after">
-                <field name="phone2" placeholder="Phone 2"/>
+                <field name="phone2" placeholder="Phone 2" widget="phone"/>
             </field>
+            <xpath expr="//field[@name='phone']/parent::*" position="after">
+                <label for="phone_direct" attrs="{'invisible': [('is_company','=', True)]}"/>
+                <div class="o_row" attrs="{'invisible': [('is_company','=', True)]}">
+                    <field name="phone_direct" widget="phone"/>
+                    <field name="phone_direct_ext" widget="phone" placeholder="Ext."/>
+                </div>
+            </xpath>
             <field name="email" position="after">
-                <field name="email2" placeholder="Email 2"/>
+                <field name="email2" placeholder="Email 2" widget="email"/>
             </field>
         </field>
     </record>

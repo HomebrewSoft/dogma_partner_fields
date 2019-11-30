@@ -18,3 +18,10 @@ class Partner(models.Model):
         related='parent_id.category_id',
         string=_('Etiquetas de la Cia.'),
     )
+    phone_direct = fields.Char(
+        string=_('Direct'),
+    )
+    phone_direct_ext = fields.Char(
+        string=_('Ext.'),
+        size=5,
+    )

@@ -9,6 +9,18 @@
                 <field name="neighboor" placeholder="Neighboor"/>
                 <field name="reference" placeholder="Reference"/>
             </field>
+            <field name="name" position="after">
+                <field name="mark" placeholder="Mark"/>
+            </field>
+            <field name="child_ids" position="attributes">
+                <attribute name="context">{'default_type': 'contact'}</attribute>
+            </field>
+            <xpath expr="//field[@name='child_ids']/form/sheet/group/group/field[@name='title']" position="replace">
+                <field name="name" string="Contact Name" attrs="{'required' : [('type', '=', 'contact')]}"/>
+            </xpath>
+            <xpath expr="//field[@name='child_ids']/form/sheet/group/group/field[@name='name']" position="replace">
+                <field name="title" placeholder="e.g. Mr." attrs="{'invisible': [('type','!=', 'contact')]}"/>
+            </xpath>
             <field name="phone" position="after">
                 <field name="phone2" placeholder="Phone 2" widget="phone"/>
             </field>
